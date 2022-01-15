@@ -5,14 +5,12 @@ from os import remove, rename
 scoreFilename = 'userScores.txt'
 
 def printInstructions(instructions):
-    print(instructions)
+    print(f'INSTRUCTIONS\n{instructions}')
 
 def getUserScore(userName):
     try:
         scores = open(scoreFilename, 'r')
     except IOError as e:
-        print(e)
-        print(f'Creating file {scoreFilename}...')
         scores = open(scoreFilename, 'w')
         print(f'File {scoreFilename} created.')
         return -1
